@@ -1,7 +1,7 @@
 package controller;
 
 import resources.Strings;
-import vista.LCDView;
+import view.LCDView;
 
 public class LCDController {
 
@@ -23,14 +23,14 @@ public class LCDController {
     public static void Proccess(String line) {
 
         if(!line.matches("[0-9]*,[0-9]*")) {
-            throw new IllegalArgumentException(Strings.ERROR_INVALD_LINE_FORMAT.toString() + "\n\t:" + line);
+            throw new IllegalArgumentException(Strings.ERROR_INVALD_LINE_FORMAT + "\n\t:" + line);
         }
 
         String[] parameters = line.split(",");
 
         size = Integer.parseInt(parameters[0]);
         if(size < 1 || 10 < size) {
-            throw new IllegalArgumentException(Strings.ERROR_INVALID_SIZE.toString() + "\n\t:" + size);
+            throw new IllegalArgumentException(Strings.ERROR_INVALID_SIZE + "\n\t:" + size);
         }
 
         LCDView.generateNumber(parameters[1]);

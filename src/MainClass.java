@@ -49,10 +49,10 @@ public class MainClass {
                         line = FileManager.readLine(buffer);
                     }
                 } else {
-                    throw new IllegalArgumentException(Strings.ERROR_SPACE_BETWEEN.toString());
+                    throw new IllegalArgumentException(Strings.ERROR_SPACE_BETWEEN);
                 }
             } catch(NumberFormatException e) {
-                throw new IllegalArgumentException(Strings.ERROR_NOT_A_NUMBER.toString());
+                throw new IllegalArgumentException(Strings.ERROR_NOT_A_NUMBER);
             }
         }
     }
