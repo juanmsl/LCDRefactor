@@ -9,12 +9,18 @@ public class MainClass {
 
     private static Vector<String> lines;
 
+    /*
+    * Main method
+    * @param args String's array that contain the arguments recieved
+    * */
     public static void main(String[] args) {
 
         try {
 
+            // Ask to user for the especific lines of numbers
             loadLines();
 
+            // Proccess each line
             for (String nextLine : lines) {
                 try {
                     LCDController.Proccess(nextLine);
@@ -41,11 +47,11 @@ public class MainClass {
                 int spaces = Integer.parseInt(line);
                 if(0 <= spaces || spaces <= 5) {
                     LCDController.spaces = spaces;
-                    System.out.print("Entrada: ");
+                    System.out.print(Strings.ASK_COMMAND_LINE);
                     line = FileManager.readLine(buffer);
                     while (!line.equals(Strings.FINAL_INPUT.toString())) {
                         lines.add(line);
-                        System.out.print("Entrada: ");
+                        System.out.print(Strings.ASK_COMMAND_LINE);
                         line = FileManager.readLine(buffer);
                     }
                 } else {
